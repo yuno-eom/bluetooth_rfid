@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.0.1_4a1a478b8c9f9d68abf78933d51114e91e688ed0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1108575c7dc7b7f5b378b3290ac90de81a9b8830">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-25.0.1_b281c31a7aedbafb3891e1e26c3665a56ed4b625.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.0.1_4d6b16eb1e8e18641e62c066d45bed9124983484.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="552bcee1ffb42eab64c104cffca0733627b53cbc">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\instant-run_c34d2cd7555c60c0d011914ce5941d69a4afc305.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_4dc5fd06e4f39efcc905aa0f9f181e7b23797cf2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.0.1_19e7d83bd64f24ea2b2a64b6db52a3a8185e7853.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.0.1_340612ce63cbfd4c26c25d94394cf8c297cebbcf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_21aed27d392c2f343924c8014b543e1628d5eb02.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\gridlayout-v7\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4700f436ede140fb804204f806c9cc3f08e386f4">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-gridlayout-v7-25.0.1_271e56c3658eecc87d40fc054334c341872f3f12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.0.1_2b14e07f5d2036a7894c1cf5c315d588e21c642b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.0.1_8284f38fd56f26e468b0806df80f0f834ede5c06.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_35df3aea503713ff2643d1565c38964e5c806d09.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.0.1_1ed0fad398bc9bea6d1db82e53f16ad006557401.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="76902e1e480f12e482c6270624fcab70a7ca1c34">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\instant-run-bootstrap_19fd16a45a3d0cfb6f4083d70cd09acca55ce9dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.0.1_4dec961c02b5919493c3342feb13a1072d94b27d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_f5f5c0f120f6f9fbc2a2197049dec9494ded1378.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_465b9a0f5cd0b2a8732ce7d39525f4af4677f168.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yuno\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\support-annotations-25.0.1_63f7ae670bce07b28c546091bb53252015faddb4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.0.1_8ab720819ab3f274d85851cc4f811238ad7ea40e.jar" />
+    </item>
+
+</items>
