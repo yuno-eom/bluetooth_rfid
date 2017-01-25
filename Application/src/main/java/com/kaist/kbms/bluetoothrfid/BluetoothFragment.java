@@ -13,23 +13,30 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BluetoothFragment extends Fragment {
 
@@ -51,7 +58,7 @@ public class BluetoothFragment extends Fragment {
 
     private ArrayAdapter<String> mReadArrayAdapter;
 
-    private static ArrayList<String> mReadTagList;
+    private ArrayList<String> mReadTagList;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,7 +74,6 @@ public class BluetoothFragment extends Fragment {
             activity.finish();
         }
     }
-
 
     @Override
     public void onStart() {
@@ -206,9 +212,10 @@ public class BluetoothFragment extends Fragment {
                     //String readMessage = new String(readBuf, 0, msg.arg1);
                     //mReadArrayAdapter.add(mConnectedDeviceName + ":  " + readMessage);
 
-                    String readMessage = packetResult(readBuf);
-                    if(readMessage != ""){
-                        mReadArrayAdapter.add(readMessage);
+                    String readTagNo = packetResult(readBuf);
+                    if(readTagNo != ""){
+                        //서버로 태그번호 전송 (HTTP, REST, ...) "http://192.168.1.71:1337/?tag="+tagNo
+                        requestTagInfo(readTagNo); //<-- mReadArrayAdapter.add(readTagNo);
                     }
 
                     break;
@@ -276,7 +283,7 @@ public class BluetoothFragment extends Fragment {
     }
 
     @NonNull
-    public static String byteArrayToHex(byte[] buffer, String stype) {
+    private String byteArrayToHex(byte[] buffer, String stype) {
         String hexFormat = stype == "hex" ? "%02X " : "%02X"; //hex: BB 01 36... , str: BB0136...
         StringBuilder sb = new StringBuilder();
         for(final byte b: buffer)
@@ -284,40 +291,76 @@ public class BluetoothFragment extends Fragment {
         return sb.toString();
     }
 
-    public static String packetResult(byte[] buffer) {
-        byte[] packetHeader = new byte[7];
-        byte[] packetTagNo = new byte[12];
+    private String packetResult(byte[] buffer) {
+        byte[] packetHeader = new byte[7];  //0~6, 7byte
+        byte[] packetBody   = new byte[12]; //7~18, 12byte
+        byte packetTail     = (byte)0x7E;   //19, 1byte
 
-        String readMessage = "";
         String packetResult = "";
-        String tagNo = "";
+        String packetTagNo  = "";
+        String returnTagNo  = "";
 
-        Log.d(TAG, "READ: " + byteArrayToHex(buffer, "hex"));
+        //Log.d(TAG, "READ: " + byteArrayToHex(buffer, "hex"));
         System.arraycopy(buffer, 0, packetHeader, 0, 7);
         packetResult = byteArrayToHex(packetHeader, "hex");
 
         if(Arrays.equals(Constants.READ_BLOCK, packetHeader)){
-            System.arraycopy(buffer, 7, packetTagNo, 0, 12);
-            tagNo = byteArrayToHex(packetTagNo, "str");
-            packetResult += " >> " + tagNo;
-            Log.i(TAG, "BLOCK READ : " + packetResult);
+            if(buffer[19] == packetTail) { //packetTail check
+                System.arraycopy(buffer, 7, packetBody, 0, 12);
+                packetTagNo = byteArrayToHex(packetBody, "str");
+                packetResult += " >> " + packetTagNo;
 
-            if(!mReadTagList.contains(tagNo)){
-                mReadTagList.add(tagNo);
-                //서버로 태그번호 전송 (HTTP, REST, ...)
-                Log.d(TAG, "HTTP 통신 : tagNo=" + tagNo);
+                if(!mReadTagList.contains(packetTagNo)){
+                    mReadTagList.add(packetTagNo);
 
-                readMessage = tagNo;
-            }
+                    Log.i(TAG, "BLOCK READ : " + packetResult);
+                    returnTagNo = packetTagNo;
+                }
+            };
         }else if(Arrays.equals(Constants.READ_START, packetHeader)){
             Log.i(TAG, "READ START : " + packetResult);
+            Toast.makeText(getActivity(), "RFID Reader Read Start", Toast.LENGTH_SHORT).show();
         }else if(Arrays.equals(Constants.READ_STOP, packetHeader)){
             Log.i(TAG, "READ STOP  : " + packetResult);
+            Toast.makeText(getActivity(), "RFID Reader Read Stop", Toast.LENGTH_SHORT).show();
         }else if(Arrays.equals(Constants.DEVICE_OFF, packetHeader)){
             Log.i(TAG, "DEVICE OFF : " + packetResult);
+            Toast.makeText(getActivity(), "RFID Reader Device Off", Toast.LENGTH_SHORT).show();
         }
-
-        return readMessage;
+        return returnTagNo;
     }
 
+    private void requestTagInfo(String tagId) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(HttpRestService.REST_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        HttpRestService.HttpRestClient client = retrofit.create(HttpRestService.HttpRestClient.class);
+        Call<ResponseBody> call = client.getTagUserInfo(tagId);
+
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    String responseBody = response.body().string();
+                    Log.d(TAG, "response: " + responseBody);
+                    try {
+                        JSONObject json = new JSONObject(responseBody);
+                        String readAdapter = json.getString("tagId") + " | " + json.getString("bicId") + " | " + json.getString("userId");
+                        mReadArrayAdapter.add(readAdapter);
+                    } catch (JSONException e) {
+                        Log.e(TAG, "jsonobject error", e);
+                    }
+                } catch (IOException e) {
+                    Log.e(TAG, "response error", e);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Log.e(TAG, "Rest failure", t);
+            }
+        });
+    }
 }
