@@ -216,6 +216,9 @@ public class BluetoothFragment extends Fragment {
                     if(readTagNo != ""){
                         //서버로 태그번호 전송 (HTTP, REST, ...) "http://192.168.1.71:1337/?tag="+tagNo
                         requestTagInfo(readTagNo); //<-- mReadArrayAdapter.add(readTagNo);
+
+                        //String[] readAdapter = HttpRestService.requestTagInfo(readTagNo);
+                        //mReadArrayAdapter.add(readAdapter[0]);
                     }
 
                     break;
