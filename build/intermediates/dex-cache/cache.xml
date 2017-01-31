@@ -61,17 +61,8 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="53f7e57ce91d69521d03a80e3396ad068b84f109">
+        sha1="5156dd05ece1cbfbcc4a18938322896b5a87f98d">
         <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\instant-run-bootstrap_19fd16a45a3d0cfb6f4083d70cd09acca55ce9dd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\yuno\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
-        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\retrofit-2.1.0_c18046e8e0196f18fdfed1752a9afd0fe6e8a832.jar" />
     </item>
     <item
         is-multidex="false"
@@ -81,6 +72,15 @@
         revision="25.0.2"
         sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
         <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.0.1_4dec961c02b5919493c3342feb13a1072d94b27d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yuno\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\retrofit-2.1.0_c18046e8e0196f18fdfed1752a9afd0fe6e8a832.jar" />
     </item>
     <item
         is-multidex="false"
@@ -124,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="552bcee1ffb42eab64c104cffca0733627b53cbc">
+        sha1="29b8be81843fed2897d4204b37fd990a16ed0e9c">
         <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\instant-run_c34d2cd7555c60c0d011914ce5941d69a4afc305.jar" />
     </item>
     <item
@@ -165,21 +165,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\yuno\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.0\2b802460eea20f8f2ad9c08c74e0f14718e88aa9\okhttp-3.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
-        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\okhttp-3.3.0_ac8ab814cd5c54f56e8af4942c38cce7202796f2.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
         <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.0.1_2b14e07f5d2036a7894c1cf5c315d588e21c642b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yuno\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.0\2b802460eea20f8f2ad9c08c74e0f14718e88aa9\okhttp-3.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\okhttp-3.3.0_ac8ab814cd5c54f56e8af4942c38cce7202796f2.jar" />
     </item>
     <item
         is-multidex="false"
@@ -192,21 +192,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\yuno\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
-        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\okio-1.8.0_46901b8b99dca131e3ea92d78af9ec0f20137ff8.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\workspace\android\KBMS\Application\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
         <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.0.1_1ed0fad398bc9bea6d1db82e53f16ad006557401.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\yuno\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="D:\workspace\android\KBMS\Application\build\intermediates\pre-dexed\debug\okio-1.8.0_46901b8b99dca131e3ea92d78af9ec0f20137ff8.jar" />
     </item>
     <item
         is-multidex="false"

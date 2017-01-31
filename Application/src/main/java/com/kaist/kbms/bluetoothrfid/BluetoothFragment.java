@@ -12,6 +12,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -213,11 +214,12 @@ public class BluetoothFragment extends Fragment {
                     //mReadArrayAdapter.add(mConnectedDeviceName + ":  " + readMessage);
 
                     String readTagNo = packetResult(readBuf);
-                    if(readTagNo != ""){
+                    if(!readTagNo.isEmpty()){
                         //서버로 태그번호 전송 (HTTP, REST, ...) "http://192.168.1.71:1337/?tag="+tagNo
                         requestTagInfo(readTagNo); //<-- mReadArrayAdapter.add(readTagNo);
 
                         //String[] readAdapter = HttpRestService.requestTagInfo(readTagNo);
+                        //Log.d(TAG, "return adaptor:" + readAdapter[0]);
                         //mReadArrayAdapter.add(readAdapter[0]);
                     }
 
@@ -333,7 +335,7 @@ public class BluetoothFragment extends Fragment {
         return returnTagNo;
     }
 
-    private void requestTagInfo(String tagId) {
+    private void requestTagInfo(final String tagId) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(HttpRestService.REST_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -346,14 +348,20 @@ public class BluetoothFragment extends Fragment {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 try {
+                    //Log.d(TAG, "response: " + response + " , response.body(): " + response.body() + " , response.body().string(): " + response.body().string());
                     String responseBody = response.body().string();
-                    Log.d(TAG, "response: " + responseBody);
-                    try {
-                        JSONObject json = new JSONObject(responseBody);
-                        String readAdapter = json.getString("tagId") + " | " + json.getString("bicId") + " | " + json.getString("userId");
+                    Log.d(TAG, "responseBody: " + responseBody);
+                    if(responseBody.equals("null") || TextUtils.isEmpty(responseBody)){
+                        String readAdapter = tagId;
                         mReadArrayAdapter.add(readAdapter);
-                    } catch (JSONException e) {
-                        Log.e(TAG, "jsonobject error", e);
+                    }else{
+                        try {
+                            JSONObject json = new JSONObject(responseBody);
+                            String readAdapter = json.getString("tagId") + " | " + json.getString("bicId") + " | " + json.getString("userId");
+                            mReadArrayAdapter.add(readAdapter);
+                        } catch (JSONException e) {
+                            Log.e(TAG, "jsonobject error", e);
+                        }
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "response error", e);

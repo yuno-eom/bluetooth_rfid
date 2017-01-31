@@ -27,7 +27,8 @@ public class HttpRestService {
         Call<ResponseBody> getTagUserInfo(@Query("tag") String tagId);
     }
 
-    public static String[] requestTagInfo(String tagId) {
+    /* -> BluetoothFragment
+    public static String[] requestTagInfo(final String tagId) {
         final String[] returnRequest = {""};
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -44,6 +45,7 @@ public class HttpRestService {
                 try {
                     String responseBody = response.body().string();
                     Log.d(TAG, "response: " + responseBody);
+                    if(TextUtils.isEmpty(responseBody)) responseBody = "{ \"tagId\": \"" + tagId + "\" }";
                     try {
                         JSONObject json = new JSONObject(responseBody);
                         returnRequest[0] = json.getString("tagId") + " | " + json.getString("bicId") + " | " + json.getString("userId");
@@ -64,4 +66,5 @@ public class HttpRestService {
 
         return returnRequest;
     }
+    */
 }
